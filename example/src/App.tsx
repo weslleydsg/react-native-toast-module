@@ -1,18 +1,37 @@
 import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
+import {
+  Alert,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import ToastModule from 'react-native-toast-module';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [message, setMessage] = React.useState('');
 
-  React.useEffect(() => {
-    ToastModule.multiply(3, 7).then(setResult);
-  }, []);
+  async function showToast() {
+    try {
+      await ToastModule.show(message);
+    } catch (error) {
+      const { message: errorMessage } = error as Error;
+      Alert.alert(errorMessage);
+    }
+  }
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TextInput
+        style={styles.textInput}
+        placeholder="Type your toast message"
+        onChangeText={setMessage}
+      />
+
+      <TouchableOpacity onPress={showToast}>
+        <Text style={styles.button}>Show</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -20,12 +39,27 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 20,
   },
   box: {
     width: 60,
     height: 60,
     marginVertical: 20,
+  },
+  textInput: {
+    flex: 1,
+    marginRight: 16,
+    paddingVertical: 4,
+    borderWidth: 1,
+    borderColor: '#3333',
+  },
+  button: {
+    padding: 8,
+    backgroundColor: 'green',
+    color: 'white',
+    borderRadius: 4,
   },
 });

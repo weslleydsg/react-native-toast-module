@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 type ToastModuleType = {
-  multiply(a: number, b: number): Promise<number>;
+  show(message: string): Promise<void>;
 };
 
 const { ToastModule } = NativeModules;
