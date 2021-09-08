@@ -1,7 +1,7 @@
 {
   "name": "@weslleydsg/react-native-toast-module",
-  "version": "1.0.1",
-  "description": "Shows an Android native toast message.",
+  "version": "1.0.2",
+  "description": "Shows an Android native toast message",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -44,7 +44,8 @@
   },
   "homepage": "https://github.com/weslleydsg/react-native-toast-module#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
