@@ -1,6 +1,6 @@
-# react-native-toast-module
+# @weslleydsg/react-native-toast-module
 
-Shows a toast message
+Shows an Android native toast message.
 
 ## Installation
 
@@ -8,14 +8,20 @@ Shows a toast message
 npm install react-native-toast-module
 ```
 
+ou
+
+```sh
+yarn add react-native-toast-module
+```
+
 ## Usage
 
 ```js
-import ToastModule from "react-native-toast-module";
+import ToastModule from 'react-native-toast-module';
 
 // ...
 
-const result = await ToastModule.multiply(3, 7);
+await ToastModule.show('YOUR MESSAGE HERE');
 ```
 
 ## Contributing
