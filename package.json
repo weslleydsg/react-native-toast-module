@@ -1,6 +1,6 @@
 {
   "name": "@weslleydsg/react-native-toast-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shows an Android native toast message",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
